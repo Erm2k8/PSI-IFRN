@@ -1,0 +1,10 @@
+
+<form action="/products/" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Registrar">
+</form>
+
+{% if registered %}
+<p>Produto registrado com sucesso!</p>
+{% endif %}
