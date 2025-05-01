@@ -1,1 +1,17 @@
-<h1>Products Index</h1>
+<h1>Products index</h1>
+
+<div class="parent">
+    {% for obj in products %}
+        <div class="child">
+            <p>{{ obj.image.url }}</p>
+            <img src="{{ obj.image.url }}" width="200" height="200" alt="Product Image">
+        </div>
+    {% endfor %}
+</div>
+
+<style>
+    div.parent {
+        display: flex;
+        flex-direction: row;
+    }
+</style>
