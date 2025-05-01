@@ -1,4 +1,4 @@
-from .settings import *
+from .base import *
 DEBUG = True
 
 SECRET_KEY='ixb62ha#ts=ab4t2u%p1_62-!5w2j==j6d^3-j$!z(@*m+-h'
