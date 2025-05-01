@@ -1,11 +1,10 @@
-from email.policy import default
 from django.db import models
 
 class Product(models.Model):
     class Categories(models.TextChoices):
-        PERIPHERAL = 'Peripheral'
-        COMPONENT = 'Component'
-        ACCESSORIE = 'Accessorie'
+        PER = 'Peripheral'
+        COM = 'Component'
+        ACC = 'Accessorie'
     
     description = models.CharField(
         max_length=1023,
@@ -23,12 +22,13 @@ class Product(models.Model):
         null=False,
         blank=False,
         choices=Categories.choices,
-        default=Categories.COMPONENT
+        default=Categories.COM
     )
 
-from django import forms
+    image = models.ImageField(
+        null=True,
+        blank=True,
+    )
 
-class RegisterProduct(forms.ModelForm):
-    class Meta:
-        model = Product
-        fields = ['description', 'price', 'category']
+    def __str__(self):
+        return f'{self.id} - {self.category}, {self.description}, {self.price}'
