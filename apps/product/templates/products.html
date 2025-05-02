@@ -3,7 +3,7 @@
 <div class="parent">
     {% for obj in products %}
         <div class="child">
-            <p>{{ obj.image.url }}</p>
+            <p>{{ obj.description }}</p>
             <img src="{{ obj.image.url }}" width="200" height="200" alt="Product Image">
         </div>
     {% endfor %}
@@ -13,5 +13,11 @@
     div.parent {
         display: flex;
         flex-direction: row;
+        gap: 20px;
+    }
+
+    div.child {
+        padding: 10px 20px;
+        border: 1px solid black;
     }
 </style>
