@@ -1,3 +1,7 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'products_index.css' %}">
+
 <h1>Products index</h1>
 
 <a href="{% url 'index' %}">Home</a>
@@ -14,21 +18,3 @@
         </div>
     {% endfor %}
 </div>
-
-<style>
-    div.parent {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    div.child {
-        padding: 10px 20px;
-        border: 1px solid black;
-    }
-
-    button {
-        cursor: pointer;
-    }
-</style>

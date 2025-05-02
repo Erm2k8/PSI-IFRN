@@ -1,0 +1,19 @@
+body {
+    background-color: rgb(168, 215, 255);
+}
+
+div.parent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+div.child {
+    padding: 10px 20px;
+    border: 1px solid black;
+}
+
+button {
+    cursor: pointer;
+}
