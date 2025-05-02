@@ -5,6 +5,10 @@
         <div class="child">
             <p>{{ obj.description }}</p>
             <img src="{{ obj.image.url }}" width="200" height="200" alt="Product Image">
+
+            <a href="{% url 'product_detail' obj.id %}">
+                <button>Detalhes</button>
+            </a>
         </div>
     {% endfor %}
 </div>
@@ -13,11 +17,16 @@
     div.parent {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         gap: 20px;
     }
 
     div.child {
         padding: 10px 20px;
         border: 1px solid black;
+    }
+
+    button {
+        cursor: pointer;
     }
 </style>

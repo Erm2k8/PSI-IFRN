@@ -1,0 +1,6 @@
+<h1>{{ product.description }}</h1>
+
+<img src="{{ product.image.url }}" alt="{{ product.description }}" width="400" height="400">
+<p>Preço: R$ {{ product.price }}</p>
+
+<a href="{% url 'products' %}">Voltar para todos os produtos</a> 
