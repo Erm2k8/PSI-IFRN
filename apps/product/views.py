@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from .models import Product
+from .models.product import Product
 
 def view_all(request):
     all_objs = Product.objects.all()

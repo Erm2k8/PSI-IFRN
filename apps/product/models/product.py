@@ -1,10 +1,14 @@
 from django.db import models
+from .category import Category
 
 class Product(models.Model):
-    class Categories(models.TextChoices):
-        PER = 'Peripheral'
-        COM = 'Component'
-        ACC = 'Accessorie'
+    category = models.ForeignKey(
+        Category,
+        on_delete=models.SET_NULL,
+        related_name='category',
+        null=True,
+        blank=True,
+    )
     
     description = models.CharField(
         max_length=1023,
@@ -15,14 +19,6 @@ class Product(models.Model):
     price = models.DecimalField(
         max_digits=8,
         decimal_places=2,
-    )
-    
-    category = models.CharField(
-        max_length=20,
-        null=False,
-        blank=False,
-        choices=Categories.choices,
-        default=Categories.COM
     )
 
     image = models.ImageField(
