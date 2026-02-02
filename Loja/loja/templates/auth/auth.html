@@ -23,6 +23,10 @@
                     {% endfor %}
                     <a href="{{link_href}}" style="display: block; text-align: center; margin-bottom: 20px;">{{link_text}}</a>
 
+                    {% if title == 'Login' %}
+                        <a href="{% url 'recovery' %}" style="display: block; text-align: center; margin-bottom: 20px;">Esqueci minha senha</a>
+                    {% endif %}
+
                     <button type="submit" class="btn btn-primary">{{button_text}}</button>
                 </form>
             </div>
